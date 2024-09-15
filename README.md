@@ -17,9 +17,9 @@
 - Very Vast and Smooth efficient performance even with complicated 3D scenes.
 - ThreeJS to WebGL is like TailwindCSS to CSS.
 
-### Foundational Concepts
+## Foundational Concepts
 
-#### 3D Objects:
+### 3D Objects:
 
 #### Mesh
 
@@ -28,25 +28,26 @@
 - Each is associated with **Geometry** and **Material**.
 
 1. Geometry
+
    - Defines structure and shape of the mesh.
    - Specifies verticies, faces, and other attributes.
    - [ThreeJS Geometries](https://threejs.org/docs/index.html#api/en/geometries/BoxGeometry)
    - Can Create custom geometries by defining verticies and faces directly on the code. But also can use 3D models from other software like blender.
 
-**Composed of:**
+     **Composed of:**
 
-- Vertices
-  - Corner points.
-  - points in a space defined by its coordinates.
-- Edges
-  - Straight lines that connects two vertices.
-- Faces
-  - Flat surfaces connecting vertices that form a closed shape.
+     - Vertices
+     - Corner points.
+     - points in a space defined by its coordinates.
+     - Edges
+     - Straight lines that connects two vertices.
+     - Faces
+     - Flat surfaces connecting vertices that form a closed shape.
 
 2. Material
    - Defines the appearance of a mesh.
    - Color, texture, How it reacts to light.
-   - [ThreeJS Materials](https://threejs.org/docs/index.html?q=materia#api/en/materials/MeshToonMaterial)
+   - [ThreeJS Materials](https://threejs.org/docs/index.html?q=materia#api/en/materials/MeshToonMaterial) <br>
      **NOTE:**See the types in the guide.
 
 **NOTE:** Everything is made of triangles. (the faces of meshes are triangles)
@@ -74,7 +75,7 @@
 
 **NOTE:** All these objects start from the base JS class `Object3D` and extends it properties.
 
-#### Common Properties:
+### Common Properties:
 
 #### Position
 
@@ -100,9 +101,7 @@
   - Y - Controls how Tall.
   - Z - Controls how 'Deep'.
 
-### Concepts
-
-#### 3D Objects
+## Concepts
 
 #### Environment
 
@@ -130,63 +129,63 @@
 - Defines the Viewpoint from which the scene is viewed.
 - Determines what is visible in the rendered scene.
 
-**Properties**
+  _Properties_
 
-1. Field of View (FOV)
+  1.  Field of View (FOV)
 
-   - Extent of the observable world visible to the camera at any moment.
-   - How much of the scene the camera can see at once.
-   - Example: Zooming In makes your FOV narrower, showing smaller part.
+      - Extent of the observable world visible to the camera at any moment.
+      - How much of the scene the camera can see at once.
+      - Example: Zooming In makes your FOV narrower, showing smaller part.
 
-2. Point of View (POV)
+  2.  Point of View (POV)
 
-   - Specific position and angle the camera looks at the scene.
-   - Cameras position and direction.
+      - Specific position and angle the camera looks at the scene.
+      - Cameras position and direction.
 
-3. Aspect Ratio
+  3.  Aspect Ratio
 
-   - Ratio between the width and the height of the camera's view.
-   - Ensures objects in scene are not squashed or stretched when displayed on different screen ratio.
-   - Example: A Square FOV = 1:1, A rectange (double Height) FOV = 2:1
+      - Ratio between the width and the height of the camera's view.
+      - Ensures objects in scene are not squashed or stretched when displayed on different screen ratio.
+      - Example: A Square FOV = 1:1, A rectange (double Height) FOV = 2:1
 
-4. Near & Far Clipping Planes
+  4.  Near & Far Clipping Planes
 
-   - Define boundaries of camera's view
-   - Determine how close or far object can be for the camera to see.
-   - Camera's viewing range.
+      - Define boundaries of camera's view
+      - Determine how close or far object can be for the camera to see.
+      - Camera's viewing range.
 
-   1. **Near Clipping Plane**
-      - Closest distance from the camera which objects are visible.
-      - Any more CLOSER than the near plane, that object is not rendered.
-   2. **Far Clipping Plane**
-      - Farthest distance objects are visible.
-      - Any FARTHER than this plane is not rendered.
+      1. **Near Clipping Plane**
+         - Closest distance from the camera which objects are visible.
+         - Any more CLOSER than the near plane, that object is not rendered.
+      2. **Far Clipping Plane**
+         - Farthest distance objects are visible.
+         - Any FARTHER than this plane is not rendered.
 
-**Camera Controls**
-They allow to rotate, zoom, and pan camera dynamically.
+  _Camera Controls_ <br>
+  They allow to rotate, zoom, and pan camera dynamically.
 
-1. Orbit Controls
+  1.  Orbit Controls
 
-   - most commonly used.
-   - Allows rotate, zoom in/out, and pan around a target point.
-   - Explore scene on different angles by keeping camera focused on a central point.
+      - most commonly used.
+      - Allows rotate, zoom in/out, and pan around a target point.
+      - Explore scene on different angles by keeping camera focused on a central point.
 
-2. Trackball Controls
+  2.  Trackball Controls
 
-   - Rotate, zoom in/out, and pan freely without being focused on a point.
+      - Rotate, zoom in/out, and pan freely without being focused on a point.
 
-3. FlyControls
+  3.  FlyControls
 
-   - Same camera as first person games.
-   - Camera moves forward, backward, and side to side. (like flying on the scene)
+      - Same camera as first person games.
+      - Camera moves forward, backward, and side to side. (like flying on the scene)
 
-4. PointerLock Control
-   - locks curson on the screen and allows user to look around.
-   - The mouse controls where we are looking in the scene.
-   - Focuses on the rotation of the camera using the mouse.
-   - often paired with keyboard controls
+  4.  PointerLock Control
+      - locks curson on the screen and allows user to look around.
+      - The mouse controls where we are looking in the scene.
+      - Focuses on the rotation of the camera using the mouse.
+      - often paired with keyboard controls
 
-**NOTE:**See the types in the guide.
+  **NOTE:**See the types in the guide.
 
 #### Lights
 
@@ -194,7 +193,7 @@ They allow to rotate, zoom, and pan camera dynamically.
 
 **NOTE:**See the types in the guide.
 
-#### SUMMARY OF CONCEPTS
+### SUMMARY OF CONCEPTS
 
 1. Start with a **Scene**, define space where everything happens.
 2. Then, use a **Camera** to determine the viewpoint & perspective of the scene.
@@ -203,8 +202,10 @@ They allow to rotate, zoom, and pan camera dynamically.
 5. Update objects overtime for dynamic behavior with **Animation**.
 6. Finally, **Render** the scene by calculating it from the camera's viewpoint that can be turned into images to be displayed on the monitor.
 
-### React Three Fiber
+## React Three Fiber
 
 - A library that simplifies building 3D Applications with **Three.js** and **React**.
 
-# ThreeJS Basics Demo
+#### Installing ThreeJS on a React Project
+
+- `npm i three @react-three/fiber @react-three/drei`
