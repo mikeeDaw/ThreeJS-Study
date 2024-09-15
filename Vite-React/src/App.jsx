@@ -1,35 +1,61 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import { Canvas } from "@react-three/fiber";
+import "./App.css";
+import { OrbitControls, Sky, Sparkles } from "@react-three/drei";
+import RotatingCube from "./meshes/RotatingCube";
+import SpinSpotlight from "./lights/SpinSpotlight";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    // To control the size of the canvas, manipulate its parent.
+    <div id="canvas-container" className="w-screen h-screen">
+      {
+        // Canvas - the object where to define the R3F Scene.
+        //        - Put all the 3JS Elements inside the canvas. like controls, camera, etc.
+        // Changing the style of the class has to be inline. Tailwind wont work.
+        // <Canvas> sets up a SCENE and a CAMERA.
+      }
+      <Canvas
+        className="w-screen h-screen bg-white"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        {
+          // Here is the R3F's declarative feature to easily put elements in the render.
+        }
+        <OrbitControls enableZoom enablePan enableRotate />
+        {
+          // IMPORTANT: All Three.js objects will be treated as native JSX elements
+          //            - meaning <directionalLight /> = Three.DirectionalLight(),
+        }
+        <directionalLight
+          position={[2, 2, 0.5]}
+          intensity={10}
+          color={0x9cdba6}
+          castShadow
+        />
+        <ambientLight color={0x9cdba6} intensity={5} />
+        <SpinSpotlight />
 
-export default App
+        <Sparkles
+          count={30}
+          scale={2}
+          size={6}
+          speed={2}
+          noise={0.2}
+          color={"#6ee4e4"}
+        />
+        {
+          // Attach a backgrond color to the Canvas
+        }
+        <color attach="background" args={["#F0F0F0"]} />
+
+        <RotatingCube />
+      </Canvas>
+    </div>
+  );
+};
+
+export default App;
