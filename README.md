@@ -7,7 +7,7 @@
 
 - `Basics` - Vanilla ThreeJS (through cdn).
 - `Vite` - Vite + Vanilla ThreeJS (through npm install).
-- `Vite-React` - Vite + React React Three Fiber (R3F).
+- `Vite-React` - Vite + React + React Three Fiber (R3F) + React Three Drei.
 
 ## THREEJS
 
@@ -185,13 +185,13 @@
       - Focuses on the rotation of the camera using the mouse.
       - often paired with keyboard controls
 
-  **NOTE:**See the types in the guide.
+  **NOTE:** See the types in the guide.
 
 #### Lights
 
 - Illuminate the scene and affect appearance of objects.
 
-**NOTE:**See the types in the guide.
+**NOTE:** See the types in the guide.
 
 ### SUMMARY OF CONCEPTS
 
@@ -202,10 +202,37 @@
 5. Update objects overtime for dynamic behavior with **Animation**.
 6. Finally, **Render** the scene by calculating it from the camera's viewpoint that can be turned into images to be displayed on the monitor.
 
-## React Three Fiber
+## React + ThreeJS
+
+### React Three Fiber (R3F)
 
 - A library that simplifies building 3D Applications with **Three.js** and **React**.
+- Allows to build ThreeJS 3D scenes using React Components and Features (like states, hooks, etc).
+
+  #### Features
+
+  1. Declarative
+     - No need to step-by-step create instance, initialize, .add() to scene functions, etc.
+     - Add the Drei component to the `<Canvas>` and it will be easily created.
+
+### React Three Drei
+
+- Collection of helper components and utilities built on top of R3F.
+- Provides Reusable components like cameras, lights, controls, pre-made shapes, etc.
+- [Documentation](https://r3f.docs.pmnd.rs/getting-started/your-first-scene) for reference.
 
 #### Installing ThreeJS on a React Project
 
 - `npm i three @react-three/fiber @react-three/drei`
+
+### Topics (React ThreeJS)
+
+**NOTE:** ALL Three.js objects will be treated as native JSX elements. R3F maps the tags to their three.js counterparts. NO IMPORTS for said objects.
+
+> - `<mesh>` == THREE.Mesh()
+> - `<boxGeometry>` == THREE.BoxGeometry()
+> - `<meshStandardMaterial>` == THREE.MeshStandardMaterial()
+
+- Setting Up Scene - `App.jsx`
+- Creating Mesh - `meshes/RotatingCube.jsx`
+- Adding Light - `App.jsx` and `lights/SpinSpotlight.jsx`
