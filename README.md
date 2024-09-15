@@ -48,7 +48,7 @@
    - Defines the appearance of a mesh.
    - Color, texture, How it reacts to light.
    - [ThreeJS Materials](https://threejs.org/docs/index.html?q=materia#api/en/materials/MeshToonMaterial) <br>
-     **NOTE:**See the types in the guide.
+     **NOTE:** See the types in the guide.
 
 **NOTE:** Everything is made of triangles. (the faces of meshes are triangles)
 
@@ -208,6 +208,7 @@
 
 - A library that simplifies building 3D Applications with **Three.js** and **React**.
 - Allows to build ThreeJS 3D scenes using React Components and Features (like states, hooks, etc).
+- [Documentation](https://r3f.docs.pmnd.rs/getting-started/your-first-scene) for reference.
 
   #### Features
 
@@ -219,7 +220,6 @@
 
 - Collection of helper components and utilities built on top of R3F.
 - Provides Reusable components like cameras, lights, controls, pre-made shapes, etc.
-- [Documentation](https://r3f.docs.pmnd.rs/getting-started/your-first-scene) for reference.
 
 #### Installing ThreeJS on a React Project
 
