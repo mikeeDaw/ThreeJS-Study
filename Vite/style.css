@@ -1,0 +1,10 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* This code is added since <body> somehow is bigger than the <canvas> */
+canvas {
+  display: block;
+}
